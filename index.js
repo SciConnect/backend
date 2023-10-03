@@ -3,6 +3,7 @@ import cors from "cors";
 import swaggerJsDoc from "./swaggerConfig.js";
 import swaggerUi from "swagger-ui-express";
 import dotenv from "dotenv";
+import { connection } from "./database/mongo.js";
 
 //dotenv configuration
 
@@ -30,4 +31,5 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+connection();
 app.listen(port, () => console.log(`server running on port ${port}`));

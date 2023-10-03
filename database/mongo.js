@@ -1,11 +1,9 @@
 import mongoose from "mongoose";
 
-const URI = process.env.DB_URI;
-
 export const connection = () => {
    try {
       mongoose
-         .connect(URI, {
+         .connect(process.env.DB_URI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
          })
