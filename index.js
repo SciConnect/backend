@@ -2,6 +2,11 @@ import express from "express";
 import cors from "cors";
 import swaggerJsDoc from "./swaggerConfig.js";
 import swaggerUi from "swagger-ui-express";
+import dotenv from "dotenv";
+
+//dotenv configuration
+
+dotenv.config();
 
 const port = 3001;
 
