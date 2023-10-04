@@ -1,6 +1,14 @@
+import express from "express";
+import {
+   getUsers,
+   loginUser,
+   registerUser,
+   updateUser,
+} from "../controllers/userController";
 
-import express from 'express';
+const router = express.Router();
 
-const router=express.Router();
-
-router.get("/",getUsers);
+router.get("/", getUsers);
+router.post("/register", registerUser);
+router.post("/login", loginUser);
+router.put("/update", updateUser);
