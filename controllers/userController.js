@@ -1,6 +1,6 @@
 import asyncHandler from "express-async-handler";
-import User from "../models/UserModel.js";
 import bcrypt from "bcryptjs";
+import User from "../models/userModel.js";
 
 export const getUsers = async (req, res) => {
    const users = await User.find({});
@@ -8,10 +8,9 @@ export const getUsers = async (req, res) => {
 };
 
 export const registerUser = asyncHandler(async (req, res) => {
-   const { name, email, password, image } = req.body;
+   const { name, email, password } = req.body;
    try {
       const userExists = await User.findOne({ email });
-
       if (userExists) {
          res.status(400);
          throw new Error("User already exists");

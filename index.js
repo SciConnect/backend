@@ -4,6 +4,7 @@ import swaggerJsDoc from "./swaggerConfig.js";
 import swaggerUi from "swagger-ui-express";
 import dotenv from "dotenv";
 import { connection } from "./database/mongo.js";
+import { userRoute } from "./routes/userRoutes.js";
 
 //dotenv configuration
 
@@ -25,7 +26,8 @@ app.use(
       }
    )
 );
-
+//routes
+app.use("/api/user", userRoute);
 //middlewares
 app.use(cors());
 app.use(express.json());

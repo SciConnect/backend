@@ -13,9 +13,9 @@ const swaggerJsDoc = {
       },
    },
    paths: {
-      "/api/signup": {
+      "/api/user/register": {
          post: {
-            tags: ["signup"],
+            tags: ["register"],
             summary: "Documentation for rest apis ",
             consumes: ["application/json"],
             produces: ["application/json"],
@@ -48,7 +48,7 @@ const swaggerJsDoc = {
             ],
          },
       },
-      "/api/login": {
+      "/api/user/login": {
          post: {
             tags: ["login"],
             summary: "login to your existing account",
